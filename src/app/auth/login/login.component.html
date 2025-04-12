@@ -22,9 +22,24 @@
 
         <div class="mb-3">
           <div class="input-group">
-            <span class="input-group-text"><i class="material-icons">lock</i></span>
-            <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter your password">
-          </div>
+            <span class="input-group-text">
+              <i class="material-icons">lock</i>
+            </span>
+          
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              class="form-control"
+              id="password"
+              formControlName="password"
+              placeholder="Enter your password"
+            >
+          
+            <span class="input-group-text" (click)="togglePasswordVisibility()" style="cursor: pointer;">
+              <i class="material-icons">
+                {{ showPassword ? 'visibility_off' : 'visibility' }}
+              </i>
+            </span>
+          </div>          
         </div>
 
         <div class="error-message mb-3" *ngIf="errorMessage">
