@@ -1,7 +1,7 @@
 <div class="auth-container">
   <mat-card class="auth-card">
     <div class="auth-logo">
-      <img src="assets/logo.png" alt="ShopEase Logo" class="logo">
+      <h1 class="logo-text">ShopEase</h1>
     </div>
     <mat-card-header>
       <mat-card-title>Welcome Back</mat-card-title>
@@ -10,51 +10,45 @@
 
     <mat-card-content>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Email</mat-label>
-          <input matInput formControlName="email" type="email" placeholder="Enter your email">
-          <mat-icon matPrefix>email</mat-icon>
-          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+        <div class="mb-3">
+          <div class="input-group">
+            <span class="input-group-text"><i class="material-icons">email</i></span>
+            <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter your email">
+          </div>
+          <div class="invalid-feedback" *ngIf="loginForm.get('email')?.hasError('required')">
             Email is required
-          </mat-error>
-          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+          </div>
+          <div class="invalid-feedback" *ngIf="loginForm.get('email')?.hasError('email')">
             Please enter a valid email
-          </mat-error>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Password</mat-label>
-          <input matInput formControlName="password" type="password" placeholder="Enter your password">
-          <mat-icon matPrefix>lock</mat-icon>
-          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
-            Password is required
-          </mat-error>
-          <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
-            Password must be at least 6 characters
-          </mat-error>
-        </mat-form-field>
-
-        <div class="forgot-password">
-          <a href="#" class="forgot-link">Forgot Password?</a>
+          </div>
         </div>
 
-        <div class="error-message" *ngIf="errorMessage">
+        <div class="mb-3">
+          <div class="input-group">
+            <span class="input-group-text"><i class="material-icons">lock</i></span>
+            <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter your password">
+          </div>
+          <div class="invalid-feedback" *ngIf="loginForm.get('password')?.hasError('required')">
+            Password is required
+          </div>
+          <div class="invalid-feedback" *ngIf="loginForm.get('password')?.hasError('minlength')">
+            Password must be at least 6 characters
+          </div>
+        </div>
+
+        <div class="error-message mb-3" *ngIf="errorMessage">
           {{ errorMessage }}
         </div>
 
         <div class="auth-actions">
-          <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid || isLoading" class="login-button">
+          <button type="submit" class="btn btn-primary w-100" [disabled]="!loginForm.valid || isLoading">
             <span *ngIf="!isLoading">Sign In</span>
-            <mat-spinner diameter="20" *ngIf="isLoading"></mat-spinner>
+            <div class="spinner-border spinner-border-sm" *ngIf="isLoading" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
           </button>
         </div>
       </form>
     </mat-card-content>
-
-    <mat-card-footer>
-      <div class="signup-link">
-        Don't have an account? <a href="#" class="signup-text">Sign up</a>
-      </div>
-    </mat-card-footer>
   </mat-card>
 </div>
