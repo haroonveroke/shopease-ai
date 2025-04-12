@@ -57,22 +57,10 @@ export class LoginComponent implements OnInit {
       const { email, password } = this.loginForm.value;
       this.authService.login(email, password).subscribe({
         next: () => {
-          this.snackBar.open('Login successful!', 'Close', {
-            duration: 3000,
-            horizontalPosition: 'center',
-            verticalPosition: 'top',
-            panelClass: ['success-snackbar']
-          });
           this.router.navigate(['/']);
         },
         error: (error) => {
           this.errorMessage = error.message || 'Invalid email or password';
-          this.snackBar.open(this.errorMessage, 'Close', {
-            duration: 3000,
-            horizontalPosition: 'center',
-            verticalPosition: 'top',
-            panelClass: ['error-snackbar']
-          });
           this.isLoading = false;
         },
         complete: () => {
