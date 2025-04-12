@@ -1,7 +1,7 @@
 import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, of } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -25,18 +25,20 @@ export class AuthService {
   private readonly TOKEN_KEY = 'auth_token';
   private platformId = inject(PLATFORM_ID);
 
+  // Valid credentials
+  private readonly VALID_EMAIL = 'haroon.abid@veroke.com';
+  private readonly VALID_PASSWORD = '123123';
+
   constructor(
     private http: HttpClient,
     private router: Router
   ) {
-    // Check for existing token on service initialization
     if (isPlatformBrowser(this.platformId)) {
       const token = localStorage.getItem(this.TOKEN_KEY);
       if (token) {
-        // In a real app, you would validate the token and fetch user data
         this.currentUserSubject.next({
           id: '1',
-          email: 'haroon.abid@veroke.com',
+          email: this.VALID_EMAIL,
           name: 'Haroon Abid'
         });
       }
@@ -44,42 +46,23 @@ export class AuthService {
   }
 
   login(email: string, password: string): Observable<AuthResponse> {
-    // Mock API call
-    return of({
-      user: {
-        id: '1',
-        email: 'haroon.abid@veroke.com',
-        name: 'Haroon Abid'
-      },
-      token: 'mock-jwt-token'
-    }).pipe(
-      tap(response => {
-        this.setSession(response);
-      })
-    );
-  }
-
-  signup(email: string, password: string, name: string): Observable<AuthResponse> {
-    // Mock API call
-    return of({
-      user: {
-        id: '1',
-        email,
-        name
-      },
-      token: 'mock-jwt-token'
-    }).pipe(
-      tap(response => {
-        this.setSession(response);
-      })
-    );
-  }
-
-  resetPassword(email: string): Observable<{ message: string }> {
-    // Mock API call
-    return of({
-      message: 'Password reset instructions sent to your email'
-    });
+    // Validate credentials
+    if (email === this.VALID_EMAIL && password === this.VALID_PASSWORD) {
+      return of({
+        user: {
+          id: '1',
+          email,
+          name: 'Haroon Abid'
+        },
+        token: 'mock-jwt-token'
+      }).pipe(
+        tap(response => {
+          this.setSession(response);
+        })
+      );
+    } else {
+      return throwError(() => new Error('Invalid email or password'));
+    }
   }
 
   logout(): void {

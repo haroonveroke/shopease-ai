@@ -28,10 +28,6 @@
           </mat-error>
         </mat-form-field>
 
-        <div class="error-message" *ngIf="errorMessage">
-          {{ errorMessage }}
-        </div>
-
         <div class="auth-actions">
           <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid || isLoading">
             <span *ngIf="!isLoading">Login</span>
