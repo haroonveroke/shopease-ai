@@ -33,7 +33,7 @@
 
 .auth-header {
   text-align: center;
-  margin: 16px 0;
+  margin: 16px 0 40px 0;
   
   .logo-text {
     font-family: 'Poppins', sans-serif;
@@ -48,6 +48,14 @@
       color: #4a9eff;
       font-weight: 600;
     }
+  }
+
+  .subtitle {
+    color: #a0a0a0;
+    font-size: 14px;
+    margin-top: 8px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
   }
 }
 

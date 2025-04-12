@@ -2,17 +2,11 @@
   <mat-card class="auth-card">
     <div class="auth-header">
       <h1 class="logo-text">Welcome back to <span class="highlight">ShopEase</span></h1>
+      <p class="subtitle">Your one-stop destination for all your shopping needs.</p>
     </div>
 
     <mat-card-content>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <div class="subtitle-container">
-          <div class="subtitle-content">
-            <span class="arrow-icon"><i class="material-icons">arrow_forward</i></span>
-            <span class="subtitle-text">Please login to continue</span>
-          </div>
-        </div>
-
         <div class="mb-3">
           <div class="input-group">
             <span class="input-group-text"><i class="material-icons">email</i></span>
