@@ -1,7 +1,11 @@
 <div class="auth-container">
   <mat-card class="auth-card">
+    <div class="auth-logo">
+      <img src="assets/logo.png" alt="ShopEase Logo" class="logo">
+    </div>
     <mat-card-header>
-      <mat-card-title>Login</mat-card-title>
+      <mat-card-title>Welcome Back</mat-card-title>
+      <mat-card-subtitle>Sign in to continue to ShopEase</mat-card-subtitle>
     </mat-card-header>
 
     <mat-card-content>
@@ -9,6 +13,7 @@
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Email</mat-label>
           <input matInput formControlName="email" type="email" placeholder="Enter your email">
+          <mat-icon matPrefix>email</mat-icon>
           <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
             Email is required
           </mat-error>
@@ -20,6 +25,7 @@
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Password</mat-label>
           <input matInput formControlName="password" type="password" placeholder="Enter your password">
+          <mat-icon matPrefix>lock</mat-icon>
           <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
             Password is required
           </mat-error>
@@ -28,17 +34,27 @@
           </mat-error>
         </mat-form-field>
 
+        <div class="forgot-password">
+          <a href="#" class="forgot-link">Forgot Password?</a>
+        </div>
+
         <div class="error-message" *ngIf="errorMessage">
           {{ errorMessage }}
         </div>
 
         <div class="auth-actions">
-          <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid || isLoading">
-            <span *ngIf="!isLoading">Login</span>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid || isLoading" class="login-button">
+            <span *ngIf="!isLoading">Sign In</span>
             <mat-spinner diameter="20" *ngIf="isLoading"></mat-spinner>
           </button>
         </div>
       </form>
     </mat-card-content>
+
+    <mat-card-footer>
+      <div class="signup-link">
+        Don't have an account? <a href="#" class="signup-text">Sign up</a>
+      </div>
+    </mat-card-footer>
   </mat-card>
 </div>
