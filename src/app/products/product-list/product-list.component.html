@@ -1,4 +1,10 @@
 <div class="products-container">
+  <div class="back-button-container mb-3">
+    <button mat-raised-button color="primary" routerLink="/products">
+      <mat-icon>arrow_back</mat-icon>
+      Back to Categories
+    </button>
+  </div>
   <mat-grid-list cols="3" rowHeight="400px" gutterSize="16">
     <mat-grid-tile *ngFor="let product of products">
       <mat-card class="product-card" [routerLink]="['/products', product.category, product.id]">
