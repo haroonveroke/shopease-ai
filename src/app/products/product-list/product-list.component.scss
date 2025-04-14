@@ -1,6 +1,33 @@
 .products-container {
   padding: 2rem;
   min-height: calc(100vh - 64px);
+  margin-bottom: 2rem;
+}
+
+.back-button-container {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  button {
+    background-color: #00bcd4;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #0097a7;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    mat-icon {
+      color: white;
+    }
+  }
 }
 
 .product-card {
