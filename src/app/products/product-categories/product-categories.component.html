@@ -1,0 +1,11 @@
+<div class="categories-container">
+  <mat-grid-list cols="4" rowHeight="200px" gutterSize="16">
+    <mat-grid-tile *ngFor="let category of categories">
+      <mat-card class="category-card" [routerLink]="['/products', category]">
+        <mat-card-content>
+          <h2>{{ category }}</h2>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div> 

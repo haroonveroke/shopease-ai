@@ -1,0 +1,14 @@
+<div class="products-container">
+  <mat-grid-list cols="3" rowHeight="400px" gutterSize="16">
+    <mat-grid-tile *ngFor="let product of products">
+      <mat-card class="product-card" [routerLink]="['/products', product.category, product.id]">
+        <img mat-card-image [src]="product.image" [alt]="product.name">
+        <mat-card-content>
+          <h2>{{ product.name }}</h2>
+          <p class="price">${{ product.price }}</p>
+          <p class="description">{{ product.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div> 

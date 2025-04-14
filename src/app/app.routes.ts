@@ -24,7 +24,15 @@ export const routes: Routes = [
       },
       {
         path: 'products',
-        loadComponent: () => import('./products/products.component').then(m => m.ProductsComponent)
+        loadComponent: () => import('./products/product-categories/product-categories.component').then(m => m.ProductCategoriesComponent)
+      },
+      {
+        path: 'products/:category',
+        loadComponent: () => import('./products/product-list/product-list.component').then(m => m.ProductListComponent)
+      },
+      {
+        path: 'products/:category/:id',
+        loadComponent: () => import('./products/product-detail/product-detail.component').then(m => m.ProductDetailComponent)
       },
       {
         path: 'orders',
