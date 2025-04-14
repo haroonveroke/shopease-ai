@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService, Order } from '../../services/order.service';
+import { CustomerService, Customer } from '../../services/customer.service';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,12 +24,20 @@ import { MatChipsModule } from '@angular/material/chips';
 })
 export class OrderListComponent implements OnInit {
   orders: Order[] = [];
+  customers: Customer[] = [];
 
-  constructor(private orderService: OrderService) {}
+  constructor(
+    private orderService: OrderService,
+    private customerService: CustomerService
+  ) {}
 
   ngOnInit(): void {
     this.orderService.getOrders().subscribe(orders => {
       this.orders = orders;
+    });
+
+    this.customerService.getCustomers().subscribe(customers => {
+      this.customers = customers;
     });
   }
 
@@ -43,5 +52,10 @@ export class OrderListComponent implements OnInit {
       default:
         return 'primary';
     }
+  }
+
+  getCustomerName(customerId: number): string {
+    const customer = this.customers.find(c => c.id === customerId);
+    return customer ? customer.name : 'Unknown Customer';
   }
 } 

@@ -17,6 +17,7 @@ export interface Order {
   shippingAddress: string;
   paymentMethod: string;
   estimatedDeliveryDate?: Date;
+  customerId: number;
 }
 
 @Injectable({
@@ -34,7 +35,8 @@ export class OrderService {
       ],
       shippingAddress: '123 Main St, New York, NY 10001',
       paymentMethod: 'Credit Card',
-      estimatedDeliveryDate: new Date('2024-03-20')
+      estimatedDeliveryDate: new Date('2024-03-20'),
+      customerId: 1
     },
     {
       id: 'ORD-002',
@@ -47,7 +49,8 @@ export class OrderService {
       ],
       shippingAddress: '456 Oak Ave, Los Angeles, CA 90001',
       paymentMethod: 'PayPal',
-      estimatedDeliveryDate: new Date('2024-04-10')
+      estimatedDeliveryDate: new Date('2024-04-10'),
+      customerId: 2
     },
     {
       id: 'ORD-003',
@@ -59,7 +62,8 @@ export class OrderService {
       ],
       shippingAddress: '789 Pine St, Chicago, IL 60601',
       paymentMethod: 'Credit Card',
-      estimatedDeliveryDate: new Date('2024-04-15')
+      estimatedDeliveryDate: new Date('2024-04-15'),
+      customerId: 1
     },
     {
       id: 'ORD-004',
@@ -72,7 +76,8 @@ export class OrderService {
       ],
       shippingAddress: '321 Elm St, Boston, MA 02108',
       paymentMethod: 'Credit Card',
-      estimatedDeliveryDate: new Date('2024-04-12')
+      estimatedDeliveryDate: new Date('2024-04-12'),
+      customerId: 3
     },
     {
       id: 'ORD-005',
@@ -86,7 +91,8 @@ export class OrderService {
       ],
       shippingAddress: '654 Maple Dr, Seattle, WA 98101',
       paymentMethod: 'PayPal',
-      estimatedDeliveryDate: new Date('2024-04-15')
+      estimatedDeliveryDate: new Date('2024-04-15'),
+      customerId: 4
     },
     {
       id: 'ORD-006',
@@ -100,7 +106,8 @@ export class OrderService {
       ],
       shippingAddress: '987 Cedar Ln, Miami, FL 33101',
       paymentMethod: 'Credit Card',
-      estimatedDeliveryDate: new Date('2024-04-18')
+      estimatedDeliveryDate: new Date('2024-04-18'),
+      customerId: 5
     },
     {
       id: 'ORD-007',
@@ -114,7 +121,8 @@ export class OrderService {
       ],
       shippingAddress: '147 Birch Rd, Denver, CO 80202',
       paymentMethod: 'Credit Card',
-      estimatedDeliveryDate: new Date('2024-04-20')
+      estimatedDeliveryDate: new Date('2024-04-20'),
+      customerId: 6
     },
     {
       id: 'ORD-008',
@@ -127,7 +135,8 @@ export class OrderService {
       ],
       shippingAddress: '258 Willow Ave, Austin, TX 78701',
       paymentMethod: 'PayPal',
-      estimatedDeliveryDate: new Date('2024-04-25')
+      estimatedDeliveryDate: new Date('2024-04-25'),
+      customerId: 7
     },
     {
       id: 'ORD-009',
@@ -141,7 +150,8 @@ export class OrderService {
       ],
       shippingAddress: '369 Oakwood Dr, San Francisco, CA 94101',
       paymentMethod: 'Credit Card',
-      estimatedDeliveryDate: new Date('2024-04-27')
+      estimatedDeliveryDate: new Date('2024-04-27'),
+      customerId: 8
     },
     {
       id: 'ORD-010',
@@ -156,7 +166,8 @@ export class OrderService {
       ],
       shippingAddress: '741 Pinecrest Ln, Portland, OR 97201',
       paymentMethod: 'PayPal',
-      estimatedDeliveryDate: new Date('2024-04-29')
+      estimatedDeliveryDate: new Date('2024-04-29'),
+      customerId: 9
     },
     {
       id: 'ORD-011',
@@ -171,7 +182,8 @@ export class OrderService {
       ],
       shippingAddress: '852 Maplewood Ave, Philadelphia, PA 19101',
       paymentMethod: 'Credit Card',
-      estimatedDeliveryDate: new Date('2024-05-02')
+      estimatedDeliveryDate: new Date('2024-05-02'),
+      customerId: 10
     },
     {
       id: 'ORD-012',
@@ -184,9 +196,12 @@ export class OrderService {
       ],
       shippingAddress: '963 Cedarwood Dr, Dallas, TX 75201',
       paymentMethod: 'PayPal',
-      estimatedDeliveryDate: new Date('2024-05-05')
+      estimatedDeliveryDate: new Date('2024-05-05'),
+      customerId: 11
     }
   ];
+
+  constructor() { }
 
   getOrders(): Observable<Order[]> {
     return of(this.mockOrders);
