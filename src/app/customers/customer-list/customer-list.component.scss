@@ -8,13 +8,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 
     h1 {
       margin: 0;
-      font-size: 24px;
-      font-weight: 500;
-      color: #333;
+      font-size: 2.5rem;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      color: #2d2d2d;
+      position: relative;
+      padding-bottom: 16px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background-color: #00bcd4;
+        border-radius: 2px;
+      }
     }
 
     .header-actions {
@@ -43,14 +57,14 @@
       ::ng-deep {
         .mat-mdc-text-field-wrapper {
           background-color: transparent;
-          height: 52px;
+          height: 54px;
         }
         .mat-mdc-form-field-flex {
-          height: 52px;
+          height: 54px;
         }
         .mat-mdc-form-field-infix {
-          padding-top: 11px;
-          padding-bottom: 11px;
+          padding-top: 12px;
+          padding-bottom: 12px;
         }
         .mat-mdc-select-value {
           line-height: 24px;
