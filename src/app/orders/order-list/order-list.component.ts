@@ -54,6 +54,32 @@ export class OrderListComponent implements OnInit {
     }
   }
 
+  getStatusIcon(status: string): string {
+    switch (status) {
+      case 'Pending':
+        return 'schedule';
+      case 'Shipped':
+        return 'local_shipping';
+      case 'Delivered':
+        return 'check_circle';
+      default:
+        return 'schedule';
+    }
+  }
+
+  getStatusDate(order: Order): string {
+    switch (order.status) {
+      case 'Pending':
+        return `Ordered on ${new Date(order.date).toLocaleDateString()}`;
+      case 'Shipped':
+        return `Est. Delivery: ${new Date(order.estimatedDeliveryDate!).toLocaleDateString()}`;
+      case 'Delivered':
+        return `Delivered on ${new Date(order.estimatedDeliveryDate!).toLocaleDateString()}`;
+      default:
+        return new Date(order.date).toLocaleDateString();
+    }
+  }
+
   getCustomerName(customerId: number): string {
     const customer = this.customers.find(c => c.id === customerId);
     return customer ? customer.name : 'Unknown Customer';

@@ -12,7 +12,10 @@
         </mat-card-title>
         <mat-card-subtitle>
           <div class="order-subtitle">
-            <span class="order-date">{{ order.date | date:'mediumDate' }}</span>
+            <span class="order-date" [class]="'status-' + order.status.toLowerCase()">
+              <mat-icon>{{ getStatusIcon(order.status) }}</mat-icon>
+              {{ getStatusDate(order) }}
+            </span>
             <span class="order-number">• Order #{{ order.id }}</span>
           </div>
         </mat-card-subtitle>

@@ -83,7 +83,40 @@
       font-size: 0.9rem;
 
       .order-date {
+        display: flex;
+        align-items: center;
+        gap: 4px;
         font-weight: 500;
+
+        mat-icon {
+          font-size: 16px;
+          width: 16px;
+          height: 16px;
+        }
+
+        &.status-pending {
+          color: #ff9800;
+
+          mat-icon {
+            color: #ff9800;
+          }
+        }
+
+        &.status-shipped {
+          color: #00bcd4;
+
+          mat-icon {
+            color: #00bcd4;
+          }
+        }
+
+        &.status-delivered {
+          color: #4caf50;
+
+          mat-icon {
+            color: #4caf50;
+          }
+        }
       }
 
       .order-number {
