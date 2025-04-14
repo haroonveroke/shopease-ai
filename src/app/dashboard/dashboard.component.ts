@@ -42,10 +42,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   @ViewChild('revenueChart') revenueChart!: ElementRef<HTMLCanvasElement>;
 
   topCategories: Category[] = [
-    { name: 'Electronics', revenue: 12450, percentage: 85 },
+    { name: 'Books', revenue: 3210, percentage: 30 },
     { name: 'Clothing', revenue: 8320, percentage: 65 },
+    { name: 'Electronics', revenue: 12450, percentage: 85 },
     { name: 'Home & Kitchen', revenue: 5780, percentage: 45 },
-    { name: 'Books', revenue: 3210, percentage: 30 }
   ];
 
   private salesChartInstance?: Chart;
