@@ -2,10 +2,11 @@
   padding: 24px;
   max-width: 1200px;
   margin: 0 auto;
+  min-height: calc(100vh - 64px);
 
   .page-title {
     margin-bottom: 24px;
-    color: #333;
+    color: #00bcd4;
     font-size: 2rem;
     font-weight: 500;
   }
@@ -17,11 +18,25 @@
   }
 
   .order-card {
+    background-color: #2d2d2d;
+    border: 1px solid #404040;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    ::ng-deep {
+      .mat-mdc-card-title {
+        color: #ffffff;
+      }
+      
+      .mat-mdc-card-subtitle {
+        color: #ffffff;
+      }
+    }
 
     &:hover {
       transform: translateY(-4px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
     .order-info {
@@ -29,20 +44,23 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 16px;
+      color: #ffffff;
 
       .total-amount {
         font-weight: 500;
         font-size: 1.1rem;
-        color: #333;
+        color: #00bcd4;
       }
     }
 
     .order-items {
       margin-bottom: 16px;
+      color: #ffffff;
 
       .items-label {
         font-weight: 500;
         margin-bottom: 8px;
+        color: #00bcd4;
       }
 
       ul {
@@ -52,7 +70,7 @@
 
         li {
           margin-bottom: 4px;
-          color: #666;
+          color: #a0a0a0;
         }
       }
     }
@@ -61,6 +79,18 @@
       padding: 16px;
       display: flex;
       justify-content: flex-end;
+
+      button {
+        background-color: #00bcd4;
+        color: #ffffff;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #008ba3;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+      }
     }
   }
 } 
