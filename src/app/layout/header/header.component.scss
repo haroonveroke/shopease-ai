@@ -146,6 +146,22 @@ $background-color: #2d2d2d;
     @include flex-center;
     gap: 8px;
     
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid $primary-color;
+      transition: transform 0.3s ease;
+      display: block;
+      margin: 0;
+      padding: 0;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    
     .material-icons {
       font-size: 24px;
       color: $text-color;
