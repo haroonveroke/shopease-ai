@@ -8,344 +8,424 @@ export class ProductService {
   private products: Product[] = [
     // Electronics
     {
-      id: 1,
-      name: 'Smartphone X',
+      id: '1',
+      name: 'iPhone 15 Pro',
       price: 999.99,
       category: 'Electronics',
-      description: 'Latest smartphone with advanced features and 5G connectivity',
-      image: 'https://via.placeholder.com/300x200?text=Smartphone'
+      description: 'Latest iPhone with A17 Pro chip and titanium design',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=1'
     },
     {
-      id: 2,
-      name: 'Laptop Pro',
-      price: 1299.99,
+      id: '2',
+      name: 'MacBook Pro M3',
+      price: 1999.99,
       category: 'Electronics',
-      description: 'High-performance laptop with 16GB RAM and 1TB SSD',
-      image: 'https://via.placeholder.com/300x200?text=Laptop'
+      description: 'Powerful laptop with M3 chip and Liquid Retina XDR display',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=2'
     },
     {
-      id: 3,
-      name: 'Wireless Headphones',
-      price: 199.99,
+      id: '3',
+      name: 'AirPods Pro',
+      price: 249.99,
       category: 'Electronics',
-      description: 'Premium noise-cancelling headphones with 30-hour battery life',
-      image: 'https://via.placeholder.com/300x200?text=Headphones'
+      description: 'Active noise cancellation and spatial audio',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=3'
     },
     {
-      id: 9,
+      id: '4',
+      name: 'Apple Watch Series 9',
+      price: 399.99,
+      category: 'Electronics',
+      description: 'Advanced health features and Always-On Retina display',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=4'
+    },
+    {
+      id: '5',
+      name: 'iPad Pro',
+      price: 799.99,
+      category: 'Electronics',
+      description: 'M2 chip and Liquid Retina XDR display',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=5'
+    },
+    {
+      id: '9',
       name: 'Smart Watch',
       price: 249.99,
       category: 'Electronics',
       description: 'Fitness tracker with heart rate monitor and GPS',
-      image: 'https://via.placeholder.com/300x200?text=Smart+Watch'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=6'
     },
     {
-      id: 13,
+      id: '13',
       name: 'Gaming Console',
       price: 399.99,
       category: 'Electronics',
       description: 'Next-gen gaming experience with 4K resolution',
-      image: 'https://via.placeholder.com/300x200?text=Gaming+Console'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=7'
     },
     {
-      id: 16,
+      id: '16',
       name: '4K Smart TV',
       price: 799.99,
       category: 'Electronics',
       description: '55-inch 4K UHD Smart TV with HDR',
-      image: 'https://via.placeholder.com/300x200?text=Smart+TV'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=8'
     },
     {
-      id: 24,
+      id: '24',
       name: 'Tablet Pro',
       price: 499.99,
       category: 'Electronics',
       description: '10-inch tablet with stylus support and 256GB storage',
-      image: 'https://via.placeholder.com/300x200?text=Tablet'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=9'
     },
     {
-      id: 28,
+      id: '28',
       name: 'Wireless Earbuds',
       price: 149.99,
       category: 'Electronics',
       description: 'True wireless earbuds with active noise cancellation',
-      image: 'https://via.placeholder.com/300x200?text=Earbuds'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=10'
     },
     {
-      id: 29,
+      id: '29',
       name: 'Smart Speaker',
       price: 99.99,
       category: 'Electronics',
       description: 'Voice-controlled smart speaker with premium sound',
-      image: 'https://via.placeholder.com/300x200?text=Smart+Speaker'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=11'
     },
 
     // Clothing
     {
-      id: 4,
-      name: 'Men\'s T-Shirt',
+      id: '6',
+      name: 'Nike Air Max',
+      price: 129.99,
+      category: 'Clothing',
+      description: 'Classic sneakers with Air cushioning',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=12'
+    },
+    {
+      id: '7',
+      name: 'Levi\'s 501 Jeans',
+      price: 69.99,
+      category: 'Clothing',
+      description: 'Original fit jeans with button fly',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=13'
+    },
+    {
+      id: '8',
+      name: 'North Face Jacket',
+      price: 199.99,
+      category: 'Clothing',
+      description: 'Waterproof and breathable outerwear',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=14'
+    },
+    {
+      id: '9',
+      name: 'Adidas T-Shirt',
       price: 29.99,
       category: 'Clothing',
-      description: 'Comfortable cotton t-shirt with modern fit',
-      image: 'https://via.placeholder.com/300x200?text=T-Shirt'
+      description: 'Classic three-stripe design',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=15'
     },
     {
-      id: 5,
-      name: 'Women\'s Dress',
-      price: 59.99,
+      id: '10',
+      name: 'Ralph Lauren Polo',
+      price: 89.99,
       category: 'Clothing',
-      description: 'Elegant summer dress with floral pattern',
-      image: 'https://via.placeholder.com/300x200?text=Dress'
+      description: 'Iconic polo shirt with embroidered logo',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=16'
     },
     {
-      id: 10,
-      name: 'Jeans',
-      price: 49.99,
-      category: 'Clothing',
-      description: 'Classic fit denim jeans with stretch',
-      image: 'https://via.placeholder.com/300x200?text=Jeans'
-    },
-    {
-      id: 14,
+      id: '14',
       name: 'Winter Jacket',
       price: 129.99,
       category: 'Clothing',
       description: 'Warm and stylish winter coat with hood',
-      image: 'https://via.placeholder.com/300x200?text=Winter+Jacket'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=17'
     },
     {
-      id: 17,
+      id: '17',
       name: 'Running Shoes',
       price: 89.99,
       category: 'Clothing',
       description: 'Lightweight running shoes with cushioning',
-      image: 'https://via.placeholder.com/300x200?text=Running+Shoes'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=18'
     },
     {
-      id: 25,
+      id: '25',
       name: 'Formal Suit',
       price: 199.99,
       category: 'Clothing',
       description: 'Classic fit formal suit with matching trousers',
-      image: 'https://via.placeholder.com/300x200?text=Formal+Suit'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=19'
     },
     {
-      id: 30,
+      id: '30',
       name: 'Leather Jacket',
       price: 159.99,
       category: 'Clothing',
       description: 'Premium leather jacket with quilted lining',
-      image: 'https://via.placeholder.com/300x200?text=Leather+Jacket'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=20'
     },
     {
-      id: 31,
+      id: '31',
       name: 'Casual Sneakers',
       price: 69.99,
       category: 'Clothing',
       description: 'Comfortable sneakers for everyday wear',
-      image: 'https://via.placeholder.com/300x200?text=Sneakers'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=21'
     },
 
     // Home & Kitchen
     {
-      id: 6,
-      name: 'Coffee Maker',
-      price: 79.99,
+      id: '11',
+      name: 'KitchenAid Mixer',
+      price: 399.99,
       category: 'Home & Kitchen',
-      description: 'Automatic coffee maker with timer and thermal carafe',
-      image: 'https://via.placeholder.com/300x200?text=Coffee+Maker'
+      description: 'Professional 5-quart stand mixer',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=22'
     },
     {
-      id: 7,
-      name: 'Blender',
-      price: 49.99,
+      id: '12',
+      name: 'Dyson Vacuum',
+      price: 499.99,
       category: 'Home & Kitchen',
-      description: 'High-speed blender for smoothies and soups',
-      image: 'https://via.placeholder.com/300x200?text=Blender'
+      description: 'Cordless stick vacuum with powerful suction',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=23'
     },
     {
-      id: 11,
-      name: 'Air Fryer',
-      price: 89.99,
+      id: '13',
+      name: 'Instant Pot',
+      price: 99.99,
       category: 'Home & Kitchen',
-      description: 'Healthy cooking with less oil, 5.8-quart capacity',
-      image: 'https://via.placeholder.com/300x200?text=Air+Fryer'
+      description: '7-in-1 multi-cooker',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=24'
     },
     {
-      id: 15,
-      name: 'Cookware Set',
+      id: '14',
+      name: 'Nespresso Machine',
       price: 199.99,
       category: 'Home & Kitchen',
-      description: 'Complete set of non-stick cookware, 10 pieces',
-      image: 'https://via.placeholder.com/300x200?text=Cookware'
+      description: 'Compact coffee maker with milk frother',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=25'
     },
     {
-      id: 18,
+      id: '15',
+      name: 'Vitamix Blender',
+      price: 449.99,
+      category: 'Home & Kitchen',
+      description: 'Professional-grade blender',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=26'
+    },
+    {
+      id: '18',
       name: 'Robot Vacuum',
       price: 299.99,
       category: 'Home & Kitchen',
       description: 'Smart robot vacuum with app control',
-      image: 'https://via.placeholder.com/300x200?text=Robot+Vacuum'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=27'
     },
     {
-      id: 26,
+      id: '26',
       name: 'Smart Thermostat',
       price: 149.99,
       category: 'Home & Kitchen',
       description: 'WiFi-enabled smart thermostat with app control',
-      image: 'https://via.placeholder.com/300x200?text=Thermostat'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=28'
     },
     {
-      id: 32,
+      id: '32',
       name: 'Stand Mixer',
       price: 249.99,
       category: 'Home & Kitchen',
       description: 'Professional stand mixer with multiple attachments',
-      image: 'https://via.placeholder.com/300x200?text=Stand+Mixer'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=29'
     },
     {
-      id: 33,
+      id: '33',
       name: 'Food Processor',
       price: 129.99,
       category: 'Home & Kitchen',
       description: 'Multi-functional food processor with 12-cup capacity',
-      image: 'https://via.placeholder.com/300x200?text=Food+Processor'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=30'
     },
 
     // Books
     {
-      id: 8,
+      id: '16',
       name: 'The Great Gatsby',
       price: 12.99,
       category: 'Books',
       description: 'Classic novel by F. Scott Fitzgerald',
-      image: 'https://via.placeholder.com/300x200?text=Great+Gatsby'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=31'
     },
     {
-      id: 12,
+      id: '17',
       name: 'To Kill a Mockingbird',
       price: 14.99,
       category: 'Books',
       description: 'Harper Lee\'s Pulitzer Prize-winning novel',
-      image: 'https://via.placeholder.com/300x200?text=Mockingbird'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=32'
     },
     {
-      id: 19,
+      id: '18',
       name: '1984',
       price: 11.99,
       category: 'Books',
       description: 'George Orwell\'s dystopian masterpiece',
-      image: 'https://via.placeholder.com/300x200?text=1984'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=33'
     },
     {
-      id: 27,
+      id: '19',
+      name: 'Pride and Prejudice',
+      price: 10.99,
+      category: 'Books',
+      description: 'Jane Austen\'s classic romance',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=34'
+    },
+    {
+      id: '20',
       name: 'The Hobbit',
       price: 15.99,
       category: 'Books',
       description: 'J.R.R. Tolkien\'s fantasy adventure',
-      image: 'https://via.placeholder.com/300x200?text=Hobbit'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=35'
     },
     {
-      id: 34,
-      name: 'Pride and Prejudice',
-      price: 10.99,
-      category: 'Books',
-      description: 'Jane Austen\'s classic romance novel',
-      image: 'https://via.placeholder.com/300x200?text=Pride+Prejudice'
-    },
-    {
-      id: 35,
+      id: '34',
       name: 'The Catcher in the Rye',
       price: 13.99,
       category: 'Books',
       description: 'J.D. Salinger\'s coming-of-age novel',
-      image: 'https://via.placeholder.com/300x200?text=Catcher+Rye'
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=36'
     },
 
     // Sports
     {
-      id: 20,
-      name: 'Yoga Mat',
+      id: '21',
+      name: 'Nike Basketball',
       price: 29.99,
       category: 'Sports',
-      description: 'Non-slip yoga mat with carrying strap',
-      image: 'https://via.placeholder.com/300x200?text=Yoga+Mat'
+      description: 'Official size basketball',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=37'
     },
     {
-      id: 21,
-      name: 'Dumbbell Set',
-      price: 79.99,
+      id: '22',
+      name: 'Yoga Mat',
+      price: 39.99,
       category: 'Sports',
-      description: 'Adjustable dumbbell set, 5-25 lbs',
-      image: 'https://via.placeholder.com/300x200?text=Dumbbells'
+      description: 'Non-slip yoga mat with carrying strap',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=38'
     },
     {
-      id: 36,
+      id: '23',
+      name: 'Dumbbell Set',
+      price: 149.99,
+      category: 'Sports',
+      description: 'Adjustable weight set',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=39'
+    },
+    {
+      id: '24',
       name: 'Tennis Racket',
       price: 89.99,
       category: 'Sports',
-      description: 'Professional tennis racket with carbon fiber frame',
-      image: 'https://via.placeholder.com/300x200?text=Tennis+Racket'
+      description: 'Professional tennis racket',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=40'
     },
     {
-      id: 37,
-      name: 'Basketball',
-      price: 24.99,
+      id: '25',
+      name: 'Running Shoes',
+      price: 129.99,
       category: 'Sports',
-      description: 'Official size basketball with premium grip',
-      image: 'https://via.placeholder.com/300x200?text=Basketball'
+      description: 'Lightweight running shoes',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=41'
     },
 
     // Beauty
     {
-      id: 38,
-      name: 'Skincare Set',
-      price: 59.99,
+      id: '26',
+      name: 'MAC Lipstick',
+      price: 19.99,
       category: 'Beauty',
-      description: 'Complete skincare routine set with cleanser, toner, and moisturizer',
-      image: 'https://via.placeholder.com/300x200?text=Skincare+Set'
+      description: 'Matte lipstick in Ruby Woo',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=42'
     },
     {
-      id: 39,
-      name: 'Makeup Palette',
-      price: 45.99,
+      id: '27',
+      name: 'Estée Lauder Serum',
+      price: 89.99,
       category: 'Beauty',
-      description: 'Professional eyeshadow palette with 12 shades',
-      image: 'https://via.placeholder.com/300x200?text=Makeup+Palette'
+      description: 'Advanced Night Repair serum',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=43'
     },
     {
-      id: 40,
-      name: 'Hair Dryer',
-      price: 79.99,
+      id: '28',
+      name: 'Dyson Hair Dryer',
+      price: 399.99,
       category: 'Beauty',
-      description: 'Ionic hair dryer with multiple heat settings',
-      image: 'https://via.placeholder.com/300x200?text=Hair+Dryer'
+      description: 'Supersonic hair dryer',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=44'
+    },
+    {
+      id: '29',
+      name: 'Chanel Perfume',
+      price: 129.99,
+      category: 'Beauty',
+      description: 'Classic No. 5 fragrance',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=45'
+    },
+    {
+      id: '30',
+      name: 'La Mer Cream',
+      price: 349.99,
+      category: 'Beauty',
+      description: 'Moisturizing cream',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=46'
     },
 
     // Toys
     {
-      id: 41,
-      name: 'Building Blocks',
-      price: 39.99,
+      id: '31',
+      name: 'LEGO Set',
+      price: 79.99,
       category: 'Toys',
-      description: 'Educational building blocks set with 100 pieces',
-      image: 'https://via.placeholder.com/300x200?text=Building+Blocks'
+      description: 'Star Wars Millennium Falcon',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=47'
     },
     {
-      id: 42,
-      name: 'Remote Control Car',
+      id: '32',
+      name: 'Barbie Dreamhouse',
+      price: 199.99,
+      category: 'Toys',
+      description: '3-story dollhouse with accessories',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=48'
+    },
+    {
+      id: '33',
+      name: 'Nintendo Switch',
+      price: 299.99,
+      category: 'Toys',
+      description: 'Gaming console with Joy-Con controllers',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=49'
+    },
+    {
+      id: '34',
+      name: 'Hot Wheels Track',
       price: 49.99,
       category: 'Toys',
-      description: 'High-speed RC car with rechargeable battery',
-      image: 'https://via.placeholder.com/300x200?text=RC+Car'
+      description: 'Race track set with cars',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=50'
     },
     {
-      id: 43,
-      name: 'Board Game',
-      price: 34.99,
+      id: '35',
+      name: 'Play-Doh Set',
+      price: 19.99,
       category: 'Toys',
-      description: 'Family board game for 2-6 players',
-      image: 'https://via.placeholder.com/300x200?text=Board+Game'
+      description: 'Creative fun with 10 colors',
+      image: 'https://picsum.photos/300/200?grayscale&blur=2&image=51'
     }
   ];
 
@@ -353,7 +433,7 @@ export class ProductService {
     return this.products;
   }
 
-  getProductById(id: number): Product | undefined {
+  getProductById(id: string | number): Product | undefined {
     return this.products.find(product => product.id === id);
   }
 
