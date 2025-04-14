@@ -1,0 +1,60 @@
+<header class="header">
+  <!-- Logo Section -->
+  <div class="logo-section">
+    <a routerLink="/dashboard" class="logo">
+      <span class="logo-text">ShopEase</span>
+    </a>
+  </div>
+
+  <!-- Navigation Section -->
+  <nav class="nav-section">
+    <ul class="nav-links">
+      <li *ngFor="let link of navigationLinks" class="nav-item">
+        <a [routerLink]="link.path" routerLinkActive="active" class="nav-link">
+          <span class="material-icons">{{link.icon}}</span>
+          <span class="nav-label">{{link.label}}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Search Section -->
+  <div class="search-section">
+    <form (ngSubmit)="onSearch()" class="search-form">
+      <div class="search-input-wrapper">
+        <span class="material-icons search-icon">search</span>
+        <input 
+          type="text" 
+          [(ngModel)]="searchQuery" 
+          name="searchQuery" 
+          placeholder="Search..." 
+          class="search-input"
+        >
+      </div>
+    </form>
+  </div>
+
+  <!-- User Profile Section -->
+  <div class="profile-section">
+    <button class="profile-button" (click)="toggleProfileDropdown()">
+      <span class="material-icons">account_circle</span>
+      <span class="material-icons dropdown-icon">{{isProfileDropdownOpen ? 'expand_less' : 'expand_more'}}</span>
+    </button>
+    
+    <div class="profile-dropdown" *ngIf="isProfileDropdownOpen">
+      <a href="#" class="dropdown-item">
+        <span class="material-icons">person</span>
+        Profile Settings
+      </a>
+      <a href="#" class="dropdown-item">
+        <span class="material-icons">settings</span>
+        Account Settings
+      </a>
+      <div class="dropdown-divider"></div>
+      <button (click)="logout()" class="dropdown-item logout-button">
+        <span class="material-icons">logout</span>
+        Logout
+      </button>
+    </div>
+  </div>
+</header> 
