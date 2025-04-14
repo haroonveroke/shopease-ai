@@ -194,9 +194,50 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.export-buttons button.pdf-button {
+  background-color: #e53935;
+}
+
+.export-buttons button.csv-button {
+  background-color: #66bb6a;
+}
+
+.export-buttons button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.export-buttons button.pdf-button:hover {
+  background-color: #c62828;
+}
+
+.export-buttons button.csv-button:hover {
+  background-color: #43a047;
+}
+
+.export-buttons button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.export-buttons button.pdf-button:active {
+  background-color: #b71c1c;
+}
+
+.export-buttons button.csv-button:active {
+  background-color: #2e7d32;
 }
 
 .export-buttons mat-icon {
+  color: white;
   margin-right: 8px;
 } 

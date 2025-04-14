@@ -126,11 +126,11 @@
     </mat-card>
 
     <div class="export-buttons">
-      <button mat-raised-button color="primary" (click)="exportToCsv()">
-        <mat-icon>download</mat-icon>
+      <button mat-raised-button class="csv-button" (click)="exportToCsv()">
+        <mat-icon>file_download</mat-icon>
         Export CSV
       </button>
-      <button mat-raised-button color="accent" (click)="exportToPdf()">
+      <button mat-raised-button class="pdf-button" (click)="exportToPdf()">
         <mat-icon>picture_as_pdf</mat-icon>
         Export PDF
       </button>
