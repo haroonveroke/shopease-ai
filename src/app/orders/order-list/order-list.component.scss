@@ -5,10 +5,24 @@
   min-height: calc(100vh - 64px);
 
   .page-title {
-    margin-bottom: 24px;
-    color: #00bcd4;
-    font-size: 2rem;
-    font-weight: 500;
+    margin-bottom: 32px;
+    color: #2d2d2d;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    padding-bottom: 16px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: #00bcd4;
+      border-radius: 2px;
+    }
   }
 
   .orders-grid {
@@ -23,14 +37,21 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 
     ::ng-deep {
       .mat-mdc-card-title {
         color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 8px;
       }
       
       .mat-mdc-card-subtitle {
-        color: #ffffff;
+        color: #a0a0a0;
+        font-size: 0.9rem;
       }
     }
 
@@ -41,10 +62,22 @@
 
     .order-info {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      gap: 16px;
       margin-bottom: 16px;
       color: #ffffff;
+
+      .order-status {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .delivery-date {
+          color: #a0a0a0;
+          font-size: 0.9rem;
+          margin: 0;
+        }
+      }
 
       .total-amount {
         font-weight: 500;
@@ -75,20 +108,54 @@
       }
     }
 
+    .order-summary {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      .summary-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #a0a0a0;
+        font-size: 0.9rem;
+
+        mat-icon {
+          font-size: 18px;
+          width: 18px;
+          height: 18px;
+          color: #00bcd4;
+        }
+      }
+    }
+
     mat-card-actions {
       padding: 16px;
       display: flex;
       justify-content: flex-end;
+      margin-top: auto;
 
       button {
         background-color: #00bcd4;
         color: #ffffff;
         transition: all 0.3s ease;
+        min-width: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
 
         &:hover {
           background-color: #008ba3;
           transform: translateY(-2px);
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        mat-icon {
+          font-size: 18px;
+          width: 18px;
+          height: 18px;
         }
       }
     }

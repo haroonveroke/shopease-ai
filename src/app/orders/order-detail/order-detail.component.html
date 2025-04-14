@@ -39,15 +39,64 @@
 
       <div class="order-section">
         <h3>Shipping Information</h3>
-        <p class="shipping-address">{{ order.shippingAddress }}</p>
+        <div class="shipping-info">
+          <div class="info-item">
+            <mat-icon>location_on</mat-icon>
+            <p class="shipping-address">{{ order.shippingAddress }}</p>
+          </div>
+          <div class="info-item">
+            <mat-icon>local_shipping</mat-icon>
+            <p class="shipping-method">Standard Shipping</p>
+          </div>
+          <div class="info-item">
+            <mat-icon>schedule</mat-icon>
+            <p class="shipping-time">Delivery within 3-5 business days</p>
+          </div>
+        </div>
       </div>
 
       <mat-divider></mat-divider>
 
       <div class="order-section">
         <h3>Payment Information</h3>
-        <p class="payment-method">Payment Method: {{ order.paymentMethod }}</p>
-        <p class="total-amount">Total Amount: ${{ order.totalAmount | number:'1.2-2' }}</p>
+        <div class="payment-info">
+          <div class="info-item">
+            <mat-icon>payment</mat-icon>
+            <p class="payment-method">Payment Method: {{ order.paymentMethod }}</p>
+          </div>
+          <div class="info-item">
+            <mat-icon>receipt</mat-icon>
+            <p class="payment-status">Payment Status: Paid</p>
+          </div>
+          <div class="info-item">
+            <mat-icon>credit_card</mat-icon>
+            <p class="card-info">Card ending in ****1234</p>
+          </div>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="order-section">
+        <h3>Order Summary</h3>
+        <div class="order-summary">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span>${{ order.totalAmount | number:'1.2-2' }}</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span>$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Tax</span>
+            <span>${{ (order.totalAmount * 0.1) | number:'1.2-2' }}</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total Amount</span>
+            <span>${{ (order.totalAmount * 1.1) | number:'1.2-2' }}</span>
+          </div>
+        </div>
       </div>
     </mat-card-content>
   </mat-card>

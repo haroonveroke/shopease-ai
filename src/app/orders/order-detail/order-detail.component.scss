@@ -36,28 +36,19 @@
     ::ng-deep {
       .mat-mdc-card-title {
         color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: 600;
       }
       
       .mat-mdc-card-subtitle {
-        color: #ffffff;
+        color: #a0a0a0;
+        font-size: 1rem;
       }
     }
 
     mat-card-header {
       margin-bottom: 24px;
       color: #ffffff;
-
-      .order-number {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: #ffffff;
-        margin-bottom: 8px;
-      }
-
-      .order-date {
-        color: #ffffff;
-        font-size: 0.9rem;
-      }
     }
 
     .order-status {
@@ -68,7 +59,7 @@
       color: #ffffff;
 
       .delivery-date {
-        color: #ffffff;
+        color: #a0a0a0;
         margin: 0;
       }
     }
@@ -113,22 +104,57 @@
         }
       }
 
-      .shipping-address {
-        color: #a0a0a0;
-        margin: 0;
-        line-height: 1.5;
+      .shipping-info, .payment-info {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .info-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+          color: #ffffff;
+
+          mat-icon {
+            color: #00bcd4;
+            font-size: 20px;
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+          }
+
+          p {
+            margin: 0;
+            color: #a0a0a0;
+            line-height: 1.5;
+          }
+        }
       }
 
-      .payment-method {
-        color: #a0a0a0;
-        margin: 0 0 8px 0;
-      }
+      .order-summary {
+        background-color: #404040;
+        border-radius: 8px;
+        padding: 16px;
 
-      .total-amount {
-        font-size: 1.2rem;
-        font-weight: 500;
-        color: #00bcd4;
-        margin: 0;
+        .summary-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 8px 0;
+          color: #ffffff;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid #2d2d2d;
+          }
+
+          &.total {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #00bcd4;
+            margin-top: 8px;
+            padding-top: 16px;
+          }
+        }
       }
     }
 

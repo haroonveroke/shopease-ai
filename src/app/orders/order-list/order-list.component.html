@@ -1,5 +1,5 @@
 <div class="orders-container">
-  <h1 class="page-title">My Orders</h1>
+  <h1 class="page-title">Orders</h1>
   
   <div class="orders-grid">
     <mat-card *ngFor="let order of orders" class="order-card">
@@ -10,24 +10,41 @@
       
       <mat-card-content>
         <div class="order-info">
+          <div class="order-status">
+            <mat-chip [color]="getStatusColor(order.status)" selected>
+              {{ order.status }}
+            </mat-chip>
+            <p *ngIf="order.estimatedDeliveryDate" class="delivery-date">
+              Est. Delivery: {{ order.estimatedDeliveryDate | date:'mediumDate' }}
+            </p>
+          </div>
           <p class="total-amount">Total: ${{ order.totalAmount | number:'1.2-2' }}</p>
-          <mat-chip [color]="getStatusColor(order.status)" selected>
-            {{ order.status }}
-          </mat-chip>
         </div>
         
         <div class="order-items">
           <p class="items-label">Items:</p>
           <ul>
             <li *ngFor="let item of order.items">
-              {{ item.name }} ({{ item.quantity }} x ${{ item.price }})
+              {{ item.name }} ({{ item.quantity }} x ${{ item.price | number:'1.2-2' }})
             </li>
           </ul>
+        </div>
+
+        <div class="order-summary">
+          <div class="summary-item">
+            <mat-icon>location_on</mat-icon>
+            <span>{{ order.shippingAddress }}</span>
+          </div>
+          <div class="summary-item">
+            <mat-icon>payment</mat-icon>
+            <span>{{ order.paymentMethod }}</span>
+          </div>
         </div>
       </mat-card-content>
       
       <mat-card-actions>
         <button mat-raised-button color="primary" [routerLink]="['/orders', order.id]">
+          <mat-icon>visibility</mat-icon>
           View Details
         </button>
       </mat-card-actions>
