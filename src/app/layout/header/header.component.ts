@@ -27,7 +27,6 @@ export class HeaderComponent {
     { path: '/products', label: 'Products', icon: 'inventory_2' },
     { path: '/orders', label: 'Orders', icon: 'shopping_cart' },
     { path: '/customers', label: 'Customers', icon: 'people' },
-    { path: '/analytics', label: 'Analytics', icon: 'analytics' }
   ];
 
   constructor(private authService: AuthService) {}
