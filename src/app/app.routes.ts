@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { authGuard } from './auth/auth.guard';
+import { OrderListComponent } from './orders/order-list/order-list.component';
+import { OrderDetailComponent } from './orders/order-detail/order-detail.component';
 
 export const routes: Routes = [
   {
@@ -32,7 +34,11 @@ export const routes: Routes = [
       },
       {
         path: 'orders',
-        loadComponent: () => import('./orders/orders.component').then(m => m.OrdersComponent)
+        component: OrderListComponent
+      },
+      {
+        path: 'orders/:id',
+        component: OrderDetailComponent
       },
       {
         path: 'customers',

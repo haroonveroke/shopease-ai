@@ -1,0 +1,66 @@
+.orders-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .page-title {
+    margin-bottom: 24px;
+    color: #333;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .orders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .order-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+
+      .total-amount {
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: #333;
+      }
+    }
+
+    .order-items {
+      margin-bottom: 16px;
+
+      .items-label {
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 4px;
+          color: #666;
+        }
+      }
+    }
+
+    mat-card-actions {
+      padding: 16px;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+} 

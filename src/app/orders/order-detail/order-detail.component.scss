@@ -1,0 +1,88 @@
+.order-detail-container {
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+
+  .back-button-container {
+    margin-bottom: 24px;
+  }
+
+  .order-detail-card {
+    mat-card-header {
+      margin-bottom: 24px;
+    }
+
+    .order-status {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+
+      .delivery-date {
+        color: #666;
+        margin: 0;
+      }
+    }
+
+    .order-section {
+      margin: 24px 0;
+
+      h3 {
+        color: #333;
+        margin-bottom: 16px;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+      .items-list {
+        .item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 8px 0;
+          border-bottom: 1px solid #eee;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          .item-name {
+            flex: 1;
+            font-weight: 500;
+          }
+
+          .item-quantity {
+            margin: 0 16px;
+            color: #666;
+          }
+
+          .item-price {
+            font-weight: 500;
+          }
+        }
+      }
+
+      .shipping-address {
+        color: #666;
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .payment-method {
+        color: #666;
+        margin: 0 0 8px 0;
+      }
+
+      .total-amount {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #333;
+        margin: 0;
+      }
+    }
+
+    mat-divider {
+      margin: 16px 0;
+    }
+  }
+} 
