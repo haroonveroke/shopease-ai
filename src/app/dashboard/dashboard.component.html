@@ -1,0 +1,139 @@
+<div class="analytics-dashboard">
+  <div class="dashboard-header">
+    <div class="welcome-section">
+      <h1>Welcome back!</h1>
+      <p>Here's what's happening with your store today.</p>
+    </div>
+  </div>
+
+  <div class="metrics-container">
+    <mat-card class="metric-card">
+      <mat-card-content>
+        <div class="metric-icon orders">
+          <mat-icon>shopping_cart</mat-icon>
+        </div>
+        <div class="metric-details">
+          <h3>Total Orders</h3>
+          <div class="metric-value">1,234</div>
+          <p class="metric-change positive">
+            <mat-icon>trending_up</mat-icon>
+            +12.5%
+          </p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="metric-card">
+      <mat-card-content>
+        <div class="metric-icon revenue">
+          <mat-icon>payments</mat-icon>
+        </div>
+        <div class="metric-details">
+          <h3>Total Revenue</h3>
+          <div class="metric-value">$45,678</div>
+          <p class="metric-change positive">
+            <mat-icon>trending_up</mat-icon>
+            +8.3%
+          </p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="metric-card">
+      <mat-card-content>
+        <div class="metric-icon customers">
+          <mat-icon>people</mat-icon>
+        </div>
+        <div class="metric-details">
+          <h3>New Customers</h3>
+          <div class="metric-value">89</div>
+          <p class="metric-change positive">
+            <mat-icon>trending_up</mat-icon>
+            +15.2%
+          </p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="metric-card">
+      <mat-card-content>
+        <div class="metric-icon products">
+          <mat-icon>inventory_2</mat-icon>
+        </div>
+        <div class="metric-details">
+          <h3>Products Sold</h3>
+          <div class="metric-value">567</div>
+          <p class="metric-change negative">
+            <mat-icon>trending_down</mat-icon>
+            -2.1%
+          </p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="charts-container">
+    <mat-card class="chart-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon class="chart-icon">show_chart</mat-icon>
+          Sales Overview
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="chart-wrapper">
+          <canvas #salesChart></canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="chart-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon class="chart-icon">bar_chart</mat-icon>
+          Revenue Overview
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="chart-wrapper">
+          <canvas #revenueChart></canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="bottom-section">
+    <mat-card class="chart-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon class="chart-icon">category</mat-icon>
+          Top Selling Categories
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="category-list">
+          <div class="category-item" *ngFor="let category of topCategories">
+            <div class="category-info">
+              <span class="category-name">{{category.name}}</span>
+              <div class="progress-bar">
+                <div class="progress" [style.width.%]="category.percentage"></div>
+              </div>
+            </div>
+            <span class="category-value">${{category.revenue}}</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <div class="export-buttons">
+      <button mat-raised-button color="primary" (click)="exportToCsv()">
+        <mat-icon>download</mat-icon>
+        Export CSV
+      </button>
+      <button mat-raised-button color="accent" (click)="exportToPdf()">
+        <mat-icon>picture_as_pdf</mat-icon>
+        Export PDF
+      </button>
+    </div>
+  </div>
+</div> 
